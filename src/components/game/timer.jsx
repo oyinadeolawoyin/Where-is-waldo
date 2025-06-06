@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useRecords } from "../leaderboard/recordsContext";
 import { useNavigate } from "react-router-dom";
 import Record from "../leaderboard/record";
+import styles from "./game.module.css";
 
 function Stopwatch({ characters }) {
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const { setRecord, setRecords } = useRecords();
+  const { setRecord, setReload } = useRecords();
   const navigate = useNavigate();
 
   const startTimer = () => {
@@ -20,7 +21,7 @@ function Stopwatch({ characters }) {
     setRecord(seconds);
     const user = JSON.parse(localStorage.getItem("user"));
     if (user !== null) {
-      Record(user.id, seconds, setRecords);
+      Record(user.id, seconds, setReload);
       navigate("/leader board")
     } else{
       navigate("/record page")
@@ -59,8 +60,7 @@ function Stopwatch({ characters }) {
   
   return (
     <div>
-      {stopTimer && <p>You win! Check your rank.</p>}
-      <p>Time: {formatTime(elapsedTime)}</p>
+      <p className={styles.time}>Time: {formatTime(elapsedTime)}</p>
     </div>
   );
 }

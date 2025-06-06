@@ -1,4 +1,4 @@
-async function Record(userId, record, setRecords) {
+async function Record(userId, record, setReload) {
     const recordResponse = await fetch(`https://waldo-server-wx8s.onrender.com/api/user/gameRecord`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -9,15 +9,12 @@ async function Record(userId, record, setRecords) {
     });
 
     const recordData = await recordResponse.json();
+    setReload(recordData);
 
     if (!recordResponse.ok) {
         throw new Error(recordData.message || "Failed to save game record");
     }
-
-    console.log("Fetched records:", recordData.records);
-    setRecords(recordData.records);
     
-
     return recordData.message;
 }
 

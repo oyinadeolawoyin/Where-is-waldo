@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Record from "./record";
 
 function User() {
-    const { record, setRecords } = useRecords();
+    const { record, setReload } = useRecords();
     const [loading, setLoading] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -47,7 +47,7 @@ function User() {
                 return;
             }
             
-            const gameRecord = Record(userId, record, setRecords);
+            const gameRecord = Record(userId, record, setReload);
 
             if (!gameRecord.ok) {
                 setError(gameRecord);

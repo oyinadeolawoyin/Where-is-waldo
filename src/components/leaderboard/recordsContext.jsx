@@ -7,6 +7,8 @@ export function RecordsProvider({ children }) {
   const [record, setRecord] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [reload, setReload] = useState([]);
+  
 
   useEffect(() => {
     async function fetchRecords() {
@@ -38,10 +40,10 @@ export function RecordsProvider({ children }) {
     }
 
     fetchRecords();
-  }, []);
+  }, [reload]);
 
   return (
-    <RecordsContext.Provider value={{ records, setRecord, setRecords, record, error, loading }}>
+    <RecordsContext.Provider value={{ records, setRecord, setRecords, record, error, loading, setReload }}>
       {children}
     </RecordsContext.Provider>
   );
