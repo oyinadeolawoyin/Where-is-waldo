@@ -16,3 +16,7 @@ The app uses a separate backend server ([waldo-server](https://github.com/yourus
 - **React** for the frontend
 - **waldo-server** backend for data storage
 - **PostgreSQL** for managing player and character data
+
+##Link
+
+- https://photo-tagger-odin-project.netlify.app/leader%20board
