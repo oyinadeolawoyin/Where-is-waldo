@@ -19,4 +19,4 @@ The app uses a separate backend server ([waldo-server](https://github.com/yourus
 
 ##Link
 
-- https://photo-tagger-odin-project.netlify.app/leader%20board
+- https://photo-tagger-odin-project.netlify.app
