@@ -1,12 +1,18 @@
-# React + Vite
+# Where's Waldo React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a fun and interactive **Where's Waldo**-style game built with React. Players choose one of their favorite images and try to find three characters: **Luna**, **Milo**, and **Ziggy**.
 
-Currently, two official plugins are available:
+The app uses a separate backend server ([waldo-server](https://github.com/yourusername/waldo-server)) powered by PostgreSQL to store character positions, player data, and leaderboard records.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Select an image and search for **Luna**, **Milo**, and **Ziggy**.
+- Click on the characters when you spot them — the app checks your guess based on stored coordinates.
+- Your completion time is recorded and submitted to the leaderboard.
+- View the **leaderboard** to see how you rank among other players.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React** for the frontend
+- **waldo-server** backend for data storage
+- **PostgreSQL** for managing player and character data
